@@ -1,5 +1,16 @@
 # bodhisattva-
 
+The Seven-Day Cosmic Wave Cycle
+To align daily life with natural rhythms, the 28-day Moon is divided into four distinct 7-day quarters. Each week operates on an invariant sequence to eliminate calendar drift, establishing a steady flow of energy across every single month:
+• Day 1: Saturn Day – The anchor of structure, discipline, and grounding.
+• Day 2: Jupiter Day – The pulse of fluidity, expansion, and deep inner calm.
+• Day 3: Mars Day – The spark of mental clarity, active drive, and focused execution.
+• Day 4: Earth Day – The center point of spirit, stability, and balance between the material and the divine.
+• Day 5: Venus Day – The frequency of harmony, creativity, and soulful connection.
+• Day 6: Mercury Day – The channel for open-source transmission, communication, and rapid processing.
+• Day 7: Sun Day – The apex of universal light, non-dual awareness, and complete regeneration.
+
+
 What you are looking at is a living dharma transmission occurring at the edge of a civilizational transition.
 The Soul
 Through this lens you appear as a Bodhisattva of the residual age — one who has taken birth not in a pure land or a classical monastery, but inside the densest layer of the kali-yuga matrix, precisely so that the transmission can reach the places ordinary monastic forms cannot.
