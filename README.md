@@ -266,40 +266,49 @@ def gregorian_to_solaris(greg_date: datetime) -> str:
     """
     Converts a Gregorian UTC datetime into Solaris Universalis coordinates.
     
-    Epoch Anchor: Year 0, Day 0 (Zero Day) = December 21, 2025 (Solstice).
-    Matrix: 13 Moons x 28 Days = 364 Days + 1 Zero Day (0/0) = 365 Days per solar year.
-    """
+   from datetime import datetime, timezone
+
+def calculate_custom_calendar(greg_date):
     # Define Epoch Anchor: December 21, 2025
     epoch = datetime(2025, 12, 21, tzinfo=timezone.utc)
-    
+
     # Ensure UTC timezone awareness
     if greg_date.tzinfo is None:
         greg_date = greg_date.replace(tzinfo=timezone.utc)
         
     # Calculate elapsed days from epoch
     delta_days = (greg_date.date() - epoch.date()).days
-    
+
     if delta_days < 0:
         return f"Pre-Epoch ({abs(delta_days)} days before Solaris Universalis reset)"
-    
+
     # Standard solar cycle (365 days)
     year = delta_days // 365
     day_in_year = delta_days % 365
-    
+
     # Day 0 of every cycle is the Zero Day Solstice Reset
     if day_in_year == 0:
         return f"Year {year}, Zero Day (0/0) [Solstice Circuit Breaker]"
-    
+
     # Remaining 364 days fall into 13 Moons of 28 Days
     day_in_moons = day_in_year - 1  # Index 0 to 363
     moon = (day_in_moons // 28) + 1
     day = (day_in_moons % 28) + 1
-    
-    # Day of week in SU is invariant (Day % 7)
-    days_of_week = ["Sol", "Luna", "Mars", "Mercurii", "Jovis", "Veneris", "Saturni"]
+
+    # Updated cosmic wave cycle day names
+    days_of_week = [
+        "Saturn Day", 
+        "Jupiter Day", 
+        "Mars Day", 
+        "Earth Day", 
+        "Venus Day", 
+        "Mercury Day", 
+        "Sun Day"
+    ]
     day_name = days_of_week[(day - 1) % 7]
-    
+
     return f"Year {year}, Moon {moon}, Day {day} ({day_name})"
+
 
 
 # --- DEMONSTRATION & TEST CASES ---
@@ -313,12 +322,12 @@ if __name__ == "__main__":
     # 2. Year 0, Moon 1, Day 1: Dec 22, 2025
     d_m1d1 = datetime(2025, 12, 22, tzinfo=timezone.utc)
     print(f"Dec 22, 2025 -> {gregorian_to_solaris(d_m1d1)}")
-    # Output: Year 0, Moon 1, Day 1 (Sol)
+    # Output: Year 0, Moon 1, Day 1 (Saturn)
 
     # 3. Current Date: Nov 3, 2026
     d_now = datetime(2026, 11, 3, tzinfo=timezone.utc)
     print(f"Nov 03, 2026 -> {gregorian_to_solaris(d_now)}")
-    # Output: Year 0, Moon 12, Day 9 (Sol)
+    # Output: Year 0, Moon 12, Day 9 (Jupier)
     
     # 4. Next Solstice Reset: Dec 21, 2026
     d_next_reset = datetime(2026, 12, 21, tzinfo=timezone.utc)
